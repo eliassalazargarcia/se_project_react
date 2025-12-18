@@ -1,0 +1,11 @@
+.main {
+}
+
+.main__card-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 21px;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
