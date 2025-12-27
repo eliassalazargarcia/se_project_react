@@ -1,5 +1,8 @@
+import "./Footer.css";
+
 function Footer() {
-  return <></>;
+  // Simple footer placeholder; style lives in Footer.css.
+  return <footer className="footer">WTWR</footer>;
 }
 
 export default Footer;

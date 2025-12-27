@@ -1,0 +1,8 @@
+/* Basic footer styling; adjust as needed. */
+.footer {
+  padding: 16px;
+  text-align: center;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 14px;
+  color: #7e7e7e;
+}
