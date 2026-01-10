@@ -1,0 +1,7 @@
+.profile {
+  display: flex;
+  gap: 24px;
+  margin-top: 24px;
+  /* Align sidebar with the section header */
+  align-items: flex-start;
+}

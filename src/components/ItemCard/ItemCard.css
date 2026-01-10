@@ -38,3 +38,19 @@
   width: 100%;
   object-fit: cover;
 }
+
+/* Responsive image cards: shrink for tablets and phones */
+@media screen and (max-width: 1024px) {
+  .card {
+    width: 260px;
+    height: 286px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    width: 100%;
+    max-width: 360px;
+    height: 240px;
+  }
+}

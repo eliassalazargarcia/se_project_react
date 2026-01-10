@@ -1,5 +1,6 @@
 import logo from "../../../assets/logo.png";
 import avatar from "../../../assets/avatar.png";
+import { Link } from "react-router-dom";
 import "./Header.css";
 
 import ToggleSwitch from "../../ToggleSwithc/ToggleSwitch";
@@ -20,7 +21,10 @@ function Header({
   return (
     <header className="header">
       <div className="header__side">
-        <img src={logo} alt="WTWR logo" className="header__logo" />
+        {/* Click logo to go to home */}
+        <Link to="/" className="header__logo-link">
+          <img src={logo} alt="WTWR logo" className="header__logo" />
+        </Link>
         <p className="header__place">
           <time className="header__datetime" dateTime={dateTimeValue}>
             {dateStr}
@@ -37,8 +41,11 @@ function Header({
         >
           + Add clothes
         </button>
-        <p className="header__username">Terrence Tegegne</p>
-        <img src={avatar} alt="Avatar icon" className="header__avatar" />
+        {/* Click name/avatar to go to profile */}
+        <Link to="/profile" className="header__profile-link">
+          <p className="header__username">Terrence Tegegne</p>
+          <img src={avatar} alt="Avatar icon" className="header__avatar" />
+        </Link>
       </div>
     </header>
   );

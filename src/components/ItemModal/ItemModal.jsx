@@ -1,6 +1,6 @@
 import "./ItemModal.css";
 
-function ItemModal({ isOpen, card, onClose }) {
+function ItemModal({ isOpen, card, onClose, onDeleteRequest }) {
   const handleOverlayMouseDown = (evt) => {
     if (evt.target === evt.currentTarget) {
       onClose();
@@ -23,8 +23,17 @@ function ItemModal({ isOpen, card, onClose }) {
           <>
             <img src={card.link} alt={card.name} className="modal__image" />
             <div className="modal__footer">
-              <p className="modal__caption">{card.name}</p>
-              <p className="modal__weather">Weather: {card.weather}</p>
+              <div className="modal__footer-text">
+                <p className="modal__caption">{card.name}</p>
+                <p className="modal__weather">Weather: {card.weather}</p>
+              </div>
+              <button
+                type="button"
+                className="modal__delete"
+                onClick={() => onDeleteRequest(card)}
+              >
+                Delete item
+              </button>
             </div>
           </>
         ) : null}

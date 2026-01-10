@@ -1,0 +1,39 @@
+.modal__content_type_confirm {
+  padding: 28px 28px 32px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.modal__confirm-text {
+  margin: 0;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #000;
+}
+
+.modal__confirm-delete {
+  display: block;
+  margin: 14px auto 0;
+  border: none;
+  background: transparent;
+  color: #ff4d00;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.modal__confirm-cancel {
+  display: block;
+  margin: 12px auto 0;
+  border: none;
+  background: transparent;
+  color: #000;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0;
+}

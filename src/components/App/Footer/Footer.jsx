@@ -1,8 +1,13 @@
 import "./Footer.css";
 
 function Footer() {
-  // Simple footer placeholder; style lives in Footer.css.
-  return <footer className="footer">WTWR</footer>;
+  return (
+    <footer className="footer">
+      {/* Footer text: credit on left, year on right */}
+      <span className="footer__left">Develpeb by Elias Salazar Garcia</span>
+      <span className="footer__right">2025</span>
+    </footer>
+  );
 }
 
 export default Footer;

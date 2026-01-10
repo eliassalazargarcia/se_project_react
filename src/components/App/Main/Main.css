@@ -1,6 +1,12 @@
 .main {
 }
 
+.weather__text {
+  /* Use the same font and color as the rest of the page */
+  font-family: "Cabinet Grotesk", sans-serif;
+  color: #000;
+}
+
 .main__card-list {
   display: flex;
   flex-wrap: wrap;
