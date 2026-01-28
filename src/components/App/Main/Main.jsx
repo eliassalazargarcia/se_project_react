@@ -6,8 +6,8 @@ import ItemCard from "../../ItemCard/ItemCard";
 import CurrentTemperatureUnitContext from "../../../context/CurrentTemperatureUnitContext";
 import { getWeatherCondition } from "../../../utils/weatherApi";
 
-function Main({ clothingItems, onCardClick, weatherData }) {
-  // Read the unit from context to keep the “Today is …” line in sync with the toggle.
+function Main({ clothingItems, onCardClick, weatherData, onCardLike, isLoggedIn }) {
+  // Read the unit from context to keep the "Today is …" line in sync with the toggle.
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
   const isFahrenheit = currentTemperatureUnit === "F";
   // Use the precomputed temperatures from the API response; no per-render conversion needed.
@@ -15,7 +15,7 @@ function Main({ clothingItems, onCardClick, weatherData }) {
     ? weatherData.temperature.F
     : weatherData.temperature.C;
   const tempSymbol = isFahrenheit ? "F" : "C";
-  // Determine which weather bucket we’re in (hot/warm/cold) based on the Fahrenheit reading.
+  // Determine which weather bucket we're in (hot/warm/cold) based on the Fahrenheit reading.
   const weatherType = getWeatherCondition(weatherData.temperature.F);
   // Only show clothing items that match the current weather bucket.
   const filteredClothing = clothingItems.filter(
@@ -31,7 +31,13 @@ function Main({ clothingItems, onCardClick, weatherData }) {
       <ul className="main__card-list">
         {filteredClothing.map((item) => {
           return (
-            <ItemCard key={item._id} data={item} onCardClick={onCardClick} />
+            <ItemCard
+              key={item._id}
+              data={item}
+              onCardClick={onCardClick}
+              onCardLike={onCardLike}
+              isLoggedIn={isLoggedIn}
+            />
           );
         })}
       </ul>

@@ -103,3 +103,43 @@
   cursor: pointer;
   padding: 0;
 }
+
+/* Tablet styles */
+@media (max-width: 768px) {
+  .modal__content {
+    width: 90%;
+    max-width: 450px;
+  }
+
+  .modal__caption,
+  .modal__weather {
+    font-size: 18px;
+  }
+}
+
+/* Phone styles */
+@media (max-width: 480px) {
+  .modal {
+    padding: 12px;
+  }
+
+  .modal__content {
+    width: 100%;
+    border-radius: 12px;
+  }
+
+  .modal__footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .modal__caption,
+  .modal__weather {
+    font-size: 16px;
+  }
+
+  .modal__image {
+    max-height: 50vh;
+  }
+}

@@ -3,3 +3,17 @@
   max-width: 1360px;
   padding: 32px 40px 24px;
 }
+
+/* Tablet styles */
+@media (max-width: 768px) {
+  .app {
+    padding: 24px 24px 20px;
+  }
+}
+
+/* Phone styles */
+@media (max-width: 480px) {
+  .app {
+    padding: 16px 16px 16px;
+  }
+}

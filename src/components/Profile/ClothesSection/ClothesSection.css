@@ -21,11 +21,15 @@
   font-family: "Cabinet Grotesk", sans-serif;
   font-size: 19px;
   font-weight: 700;
-  color: #000;
+  color: #2f80ed;
   background: transparent;
   border: none;
   padding: 0;
   cursor: pointer;
+}
+
+.clothes-section__add-btn:hover {
+  color: #5a9ff5;
 }
 
 .clothes-section__list {

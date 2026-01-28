@@ -8,6 +8,7 @@ function ModalWithForm({
   onClose,
   onSubmit,
   children,
+  altButton,
 }) {
   const handleOverlayMouseDown = (evt) => {
     if (evt.target === evt.currentTarget) {
@@ -37,9 +38,12 @@ function ModalWithForm({
         <h2 className="modal__title">{title}</h2>
         <form className="modal__form" name={name} onSubmit={handleSubmit}>
           {children}
-          <button type="submit" className="modal__submit">
-            {buttonText}
-          </button>
+          <div className="modal__button-row">
+            <button type="submit" className="modal__submit">
+              {buttonText}
+            </button>
+            {altButton}
+          </div>
         </form>
       </div>
     </div>

@@ -5,3 +5,18 @@
   /* Align sidebar with the section header */
   align-items: flex-start;
 }
+
+/* Tablet styles */
+@media (max-width: 768px) {
+  .profile {
+    gap: 20px;
+  }
+}
+
+/* Phone styles */
+@media (max-width: 480px) {
+  .profile {
+    flex-direction: column;
+    gap: 24px;
+  }
+}

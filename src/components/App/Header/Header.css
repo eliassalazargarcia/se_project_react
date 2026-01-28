@@ -43,6 +43,11 @@
   border: none;
   padding: 0;
   cursor: pointer;
+  color: #2f80ed;
+}
+
+.header__add-clothes-btn:hover {
+  color: #5a9ff5;
 }
 
 .header__username {
@@ -57,4 +62,108 @@
   height: 40px;
   border-radius: 50%;
   object-fit: cover;
+}
+
+.header__avatar-placeholder {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.header__auth-btn {
+  margin-left: 16px;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: #2f80ed;
+}
+
+.header__auth-btn:hover {
+  color: #5a9ff5;
+}
+
+/* Tablet styles */
+@media (max-width: 768px) {
+  .header {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .header__place,
+  .header__datetime {
+    font-size: 18px;
+  }
+
+  .header__add-clothes-btn,
+  .header__auth-btn {
+    font-size: 18px;
+  }
+
+  .header__username {
+    font-size: 18px;
+  }
+
+  .header__logo {
+    margin-right: 16px;
+    height: 32px;
+  }
+}
+
+/* Phone styles */
+@media (max-width: 480px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .header__side {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .header__place,
+  .header__datetime {
+    font-size: 16px;
+  }
+
+  .header__add-clothes-btn {
+    font-size: 16px;
+    margin-left: 0;
+    margin-right: 12px;
+  }
+
+  .header__auth-btn {
+    font-size: 16px;
+    margin-left: 12px;
+  }
+
+  .header__username {
+    font-size: 16px;
+    margin-right: 8px;
+  }
+
+  .header__avatar,
+  .header__avatar-placeholder {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  .header__logo {
+    margin-right: 12px;
+    height: 28px;
+  }
 }

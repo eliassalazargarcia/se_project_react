@@ -1,7 +1,16 @@
+import { useContext } from "react";
 import "./ClothesSection.css";
 import ItemCard from "../../ItemCard/ItemCard.jsx";
+import CurrentUserContext from "../../../context/CurrentUserContext";
 
-function ClothesSection({ clothingItems, onAddClothesClick, onCardClick }) {
+function ClothesSection({ clothingItems, onAddClothesClick, onCardClick, onCardLike }) {
+  const currentUser = useContext(CurrentUserContext);
+
+  // Filter items to only show those owned by the current user
+  const userItems = clothingItems.filter(
+    (item) => item.owner === currentUser?._id
+  );
+
   return (
     <section className="clothes-section">
       <div className="clothes-section__header">
@@ -15,11 +24,17 @@ function ClothesSection({ clothingItems, onAddClothesClick, onCardClick }) {
           + Add new
         </button>
       </div>
-      {/* Show every clothing card in the app */}
+      {/* Show only clothing cards owned by the current user */}
       <ul className="clothes-section__list">
-        {clothingItems.map((item) => {
+        {userItems.map((item) => {
           return (
-            <ItemCard key={item._id} data={item} onCardClick={onCardClick} />
+            <ItemCard
+              key={item._id}
+              data={item}
+              onCardClick={onCardClick}
+              onCardLike={onCardLike}
+              isLoggedIn={true}
+            />
           );
         })}
       </ul>

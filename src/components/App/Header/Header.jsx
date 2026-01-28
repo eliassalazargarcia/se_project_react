@@ -1,15 +1,21 @@
+import { useContext } from "react";
 import logo from "../../../assets/logo.png";
-import avatar from "../../../assets/avatar.png";
 import { Link } from "react-router-dom";
 import "./Header.css";
 
 import ToggleSwitch from "../../ToggleSwithc/ToggleSwitch";
+import CurrentUserContext from "../../../context/CurrentUserContext";
 
 // Shows logo, location, and button to add clothes; needs weatherData to display the city name.
 function Header({
   onAddClothesClick,
   weatherData,
+  isLoggedIn,
+  onRegisterClick,
+  onLoginClick,
 }) {
+  const currentUser = useContext(CurrentUserContext);
+
   const now = new Date();
   const dateStr = now.toLocaleDateString("default", {
     month: "short",
@@ -34,18 +40,49 @@ function Header({
       </div>
       <div className="header__side">
         <ToggleSwitch />
-        <button
-          type="button"
-          className="header__add-clothes-btn"
-          onClick={onAddClothesClick}
-        >
-          + Add clothes
-        </button>
-        {/* Click name/avatar to go to profile */}
-        <Link to="/profile" className="header__profile-link">
-          <p className="header__username">Terrence Tegegne</p>
-          <img src={avatar} alt="Avatar icon" className="header__avatar" />
-        </Link>
+        {isLoggedIn ? (
+          <>
+            <button
+              type="button"
+              className="header__add-clothes-btn"
+              onClick={onAddClothesClick}
+            >
+              + Add clothes
+            </button>
+            {/* Click name/avatar to go to profile */}
+            <Link to="/profile" className="header__profile-link">
+              <p className="header__username">{currentUser?.name}</p>
+              {currentUser?.avatar ? (
+                <img
+                  src={currentUser.avatar}
+                  alt="Avatar icon"
+                  className="header__avatar"
+                />
+              ) : (
+                <div className="header__avatar-placeholder">
+                  {currentUser?.name?.charAt(0).toUpperCase()}
+                </div>
+              )}
+            </Link>
+          </>
+        ) : (
+          <>
+            <button
+              type="button"
+              className="header__auth-btn"
+              onClick={onRegisterClick}
+            >
+              Sign Up
+            </button>
+            <button
+              type="button"
+              className="header__auth-btn"
+              onClick={onLoginClick}
+            >
+              Log In
+            </button>
+          </>
+        )}
       </div>
     </header>
   );

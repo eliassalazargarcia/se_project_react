@@ -24,6 +24,7 @@
 .card__title {
   position: absolute;
   top: 15px;
+  left: 15px;
   margin: 0;
   font-family: "Cabinet Grotesk", sans-serif;
   font-weight: 700;
@@ -32,6 +33,30 @@
   background-color: #ffffff;
   border-radius: 5px;
   padding: 2px 12px;
+}
+
+.card__like-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  background-image: url("../../assets/like-button.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.card__like-button:hover {
+  opacity: 0.8;
+}
+
+.card__like-button_active {
+  background-image: url("../../assets/like-button-active.svg");
 }
 
 .card__image {
