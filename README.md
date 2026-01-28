@@ -2,6 +2,9 @@
 
 A React + Vite project that shows weather-based clothing items, a profile page, and item management using a mock API.
 
+## Backend Repository
+[WTWR Backend](https://github.com/eliassalazargarcia/se_project_express)
+
 ## Features
 - Home page shows items filtered by current weather.
 - Profile page shows all items and an add button.
