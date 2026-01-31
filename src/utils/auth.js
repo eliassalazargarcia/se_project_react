@@ -1,4 +1,7 @@
-const baseUrl = "http://localhost:3001";
+const baseUrl =
+  import.meta.env.MODE === "production"
+    ? "http://api.finalsprint.jumpingcrab.com"
+    : "http://localhost:3001";
 
 const handleResponse = (res) => {
   if (res.ok) {
