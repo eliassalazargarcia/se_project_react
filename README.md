@@ -1,45 +1,62 @@
-# WTWR React App
+# WTWR (What to Wear)
 
-A React + Vite project that shows weather-based clothing items, a profile page, and item management using a mock API.
+A weather-based clothing recommendation app that helps users decide what to wear based on current weather conditions. Users can browse, add, and manage clothing items while the app suggests appropriate attire for the day's forecast.
 
-## Backend Repository
-[WTWR Backend](https://github.com/eliassalazargarcia/se_project_express)
+**Live Demo:** [https://finalsprint.jumpingcrab.com](https://finalsprint.jumpingcrab.com)
+
+**Backend Repository:** [WTWR Express API](https://github.com/eliassalazargarcia/se_project_express)
+
+## Tech Stack
+
+- **Frontend:** React, React Router, Vite
+- **Backend:** Node.js, Express
+- **Database:** MongoDB
 
 ## Features
-- Home page shows items filtered by current weather.
-- Profile page shows all items and an add button.
-- Add/delete items through a mock server (`json-server`).
-- Responsive item cards for desktop, tablet, and phone.
 
-## Demo Video
-Presentation/explanation video:
-https://drive.google.com/file/d/1OUhPrK2FbILZ2N6zuBsQjT1-WABsg4cF/view?usp=sharing
+- View weather-appropriate clothing suggestions based on current local weather
+- Browse all clothing items on a personalized profile page
+- Add new clothing items with name, image URL, and weather category
+- Delete items with confirmation dialog
+- Responsive design optimized for desktop, tablet, and mobile devices
+- User authentication (login/signup)
+- Like/unlike favorite clothing items
 
-## Getting Started
-1) Install dependencies:
+## Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/eliassalazargarcia/se_project_react.git
+cd se_project_react
 ```
+
+2. Install dependencies:
+```bash
 npm install
 ```
-2) Start the mock API server (Terminal 1):
-```
-json-server --watch db.json --id _id --port 3001
-```
-3) Start the app (Terminal 2):
-```
+
+3. Start the development server:
+```bash
 npm run dev
 ```
 
-## Notes for Presentation
-See `NOTES.md` for a simple, non-technical summary you can read from.
+4. Open [http://localhost:5173](http://localhost:5173) in your browser.
 
-## Project Structure (Key Files)
-- `src/components/App/App.jsx`: routes, state, and modal handlers
-- `src/components/Profile/*`: profile layout and list of items
-- `src/components/AddItemModal/AddItemModal.jsx`: add item form
-- `src/components/ItemModal/ItemModal.jsx`: item preview and delete trigger
-- `src/components/DeleteConfirmationModal/*`: delete confirmation dialog
-- `src/utils/api.js`: GET/POST/DELETE calls to the mock server
+## Backend Setup
 
-## Requirements
-- Node.js + npm
-- `json-server` running on port 3001
+This frontend connects to a separate Express API backend. To run the full application locally:
+
+1. Clone and set up the [backend repository](https://github.com/eliassalazargarcia/se_project_express)
+2. Ensure the backend server is running on port 3001
+3. The frontend will automatically connect to the API endpoints
+
+## Project Structure
+
+```
+src/
+├── components/     # React components (App, Profile, Modals, etc.)
+├── contexts/       # React context providers
+├── hooks/          # Custom React hooks
+├── utils/          # API calls and helper functions
+└── vendor/         # Third-party assets and fonts
+```
